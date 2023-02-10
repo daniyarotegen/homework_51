@@ -1,0 +1,20 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Index Page</title>
+</head>
+<body>
+<div class="container">
+    <h2>Welcome to cat simulator</h2>
+    <h2>To start enter a cat's name</h2>
+<form method="post">
+    {% csrf_token %}
+    <input type="text" name="name">
+    <input type="submit" value="Submit">
+</form>
+</div>
+</body>
+</html>

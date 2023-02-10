@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Cat</title>
+</head>
+<body>
+<p>Name: {{ cat.name }}</p>
+<p>Age: {{ cat.age }}</p>
+<p>Satiety: {{ cat.satiety }}</p>
+<p>Happiness: {{ cat.happiness }}</p>
+<img src="{{ cat.avatar }}" alt="Cat Avatar">
+<form method="post">
+    {% csrf_token %}
+    <select name="action">
+        <option value="feed">Feed</option>
+        <option value="play">Play</option>
+        <option value="sleep">Sleep</option>
+    </select>
+    <input type="submit" value="Submit">
+</form>
+
+
+
+
+</body>
+</html>
